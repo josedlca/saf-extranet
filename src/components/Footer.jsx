@@ -77,7 +77,7 @@ const Footer = () => {
                     backgroundColor:"#4ee189",
                     color:"#0d144d",
                     fontWeight:"600",
-                    width: "100%"
+                    width: "90%"
                 }}
                 startIcon={<CurrencyExchange />} 
                 >

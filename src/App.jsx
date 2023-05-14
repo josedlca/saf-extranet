@@ -3,6 +3,7 @@ import FormSide from "./components/FormSide"
 import Navbar from "./components/Navbar"
 import { Box, Stack } from "@mui/material"
 import Footer from "./components/Footer"
+import ChargeSide from "./components/ChargeSide"
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       </Stack>       */}
       <Stack direction={"column"} width={"100%"} height={"100vh"}>
         <Navbar />
-        <Footer />
+        <ChargeSide/>
+        {/* <Footer /> */}
       </Stack>
     </Box>
   )
