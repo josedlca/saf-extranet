@@ -19,7 +19,6 @@ const FormSide = () => {
     <Box 
         bgcolor={"#fff"}
         flex={1}
-        p={4}
         display={"inline-flex"} justifyContent={"center"} flexDirection={"column"} alignItems={"center"}
     >
         <Box sx={{minWidth:"60%"}}>
