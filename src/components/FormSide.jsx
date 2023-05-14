@@ -1,4 +1,5 @@
-import { Box, Button, Checkbox, Grid, Link, TextField, Typography, styled } from '@mui/material'
+import { Visibility, VisibilityOff } from '@mui/icons-material';
+import { Box, Button, FormControl, Grid, IconButton, InputAdornment, InputLabel, Link, OutlinedInput, TextField, Typography, styled } from '@mui/material'
 import React from 'react'
 
 const FormSide = () => {
@@ -15,6 +16,9 @@ const FormSide = () => {
             padding: "16px 20px"
         }
     })
+    const [showPassword, setShowPassword] = React.useState(false);
+
+    const handleClickShowPassword = () => setShowPassword((show) => !show);
   return (
     <Box 
         bgcolor={"#fff"}
@@ -35,20 +39,35 @@ const FormSide = () => {
                     label="Documento de Identidad" 
                     name="document" 
                     autoComplete='Documento de identidad'
-                    inputProps={{ sx: { borderRadius: 20 } }}
                     />
                 </Box>
-                <Box>
+                <Box width={"100%"}>
                     <Typography variant='h6' sx={{fontWeight:"500", color: "#0d144d"}}>
                         Contraseña
                     </Typography>
-                    <OwnTextField 
-                    id='password' 
-                    label="Contraseña" 
-                    name="password" 
-                    autoComplete='current-password'
-                    />
+
+                    <FormControl sx={{width:"100%", marginTop:"16px", marginBottom:"30px"}} variant="outlined">
+                        <InputLabel htmlFor="password">Contraseña</InputLabel>
+                        <OutlinedInput
+                            id="password"
+                            sx={{fieldset:{borderRadius:"10px"}, width:"100%"}}
+                            type={showPassword ? 'text' : 'password'}
+                            endAdornment={
+                            <InputAdornment position="end">
+                                <IconButton
+                                aria-label="toggle password visibility"
+                                onClick={handleClickShowPassword}
+                                edge="end"
+                                >
+                                {showPassword ? <VisibilityOff /> : <Visibility />}
+                                </IconButton>
+                            </InputAdornment>
+                            }
+                            label="Contraseña"
+                        />
+                    </FormControl>
                 </Box>
+
                 <Button
                 type="submit"
                 fullWidth
